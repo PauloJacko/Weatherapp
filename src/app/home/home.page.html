@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="inicio-contenedor">
+  <div class="inicio">
+    <h1>Aplicación de pruebas - Equifax</h1>
   </div>
-</ion-content>
+<div class="weather-contenedor">
+  <h1>Consulta el Clima</h1>
+
+  <input [(ngModel)]="city" placeholder="Ingrese una ciudad" />
+  <button (click)="getWeather()">Buscar</button>
+
+  <div *ngIf="weatherData">
+    <h2>{{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
+    <p>🌡️ Temperatura: {{ weatherData.current.temp_c }} °C</p>
+    <p>💧 Humedad: {{ weatherData.current.humidity }}%</p>
+    <p>💨 Viento: {{ weatherData.current.wind_kph }} km/h</p>
+    <p>🌤️ Condición: {{ weatherData.current.condition.text }}</p>
+    <img [src]="weatherData.current.condition.icon" alt="Condición climática">
+  </div>
+
+  <div *ngIf="!weatherData">
+    <p>Ingrese ciudad para consultar el clima</p>
+  </div>
+</div>

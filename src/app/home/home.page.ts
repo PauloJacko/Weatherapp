@@ -1,12 +1,30 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { WeatherService } from '../weatherapp.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  standalone: true,
+  imports: [CommonModule, FormsModule, IonicModule],
 })
 export class HomePage {
-  constructor() {}
+  city: string = ''; 
+  weatherData: any;
+
+  constructor(private weatherService: WeatherService) {}
+
+  getWeather() {
+    this.weatherService.getWeather(this.city).subscribe(
+      (data) => {
+        this.weatherData = data;
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
+  }
 }
