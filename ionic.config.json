@@ -1,0 +1,7 @@
+{
+  "name": "Weatherapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
