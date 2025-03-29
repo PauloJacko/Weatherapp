@@ -1,23 +1,29 @@
-<div class="inicio-contenedor">
-  <div class="inicio">
-    <h1>Aplicación de pruebas - Equifax</h1>
-  </div>
-<div class="weather-contenedor">
-  <h1>Consulta el Clima</h1>
+<ion-content>
+  <div class="inicio-contenedor">
+    <div class="inicio">
+      <h1>Aplicación de pruebas - Equifax</h1>
+    </div>
+    <div class="weather-contenedor">
+      <h1>Consulta el Clima</h1>
 
-  <input [(ngModel)]="city" placeholder="Ingrese una ciudad" />
-  <button (click)="getWeather()">Buscar</button>
+      <input [(ngModel)]="city" placeholder="Ingrese una ciudad" />
+      <button (click)="getWeather()">Buscar</button>
 
-  <div *ngIf="weatherData">
-    <h2>{{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
-    <p>🌡️ Temperatura: {{ weatherData.current.temp_c }} °C</p>
-    <p>💧 Humedad: {{ weatherData.current.humidity }}%</p>
-    <p>💨 Viento: {{ weatherData.current.wind_kph }} km/h</p>
-    <p>🌤️ Condición: {{ weatherData.current.condition.text }}</p>
-    <img [src]="weatherData.current.condition.icon" alt="Condición climática">
-  </div>
+      <div *ngIf="weatherData">
+        <h2>{{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
+        <p>🌡️ Temperatura: {{ weatherData.current.temp_c }} °C</p>
+        <p>💧 Humedad: {{ weatherData.current.humidity }}%</p>
+        <p>💨 Viento: {{ weatherData.current.wind_kph }} km/h</p>
+        <p>🌤️ Condición: {{ weatherData.current.condition.text }}</p>
+        <img [src]="weatherData.current.condition.icon" alt="Condición climática">
+      </div>
 
-  <div *ngIf="!weatherData">
-    <p>Ingrese ciudad para consultar el clima</p>
+      <div *ngIf="!weatherData">
+        <p>Ingrese ciudad para consultar el clima</p>
+      </div>
+    </div>
+    <div id="contenedor-mapa">
+      <div id="map"></div>
+    </div>
   </div>
-</div>
+</ion-content>
