@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherService {
-  private apiKey: string = 'd8d599366985474fa2131229252603';  
+  private apiKey: string = '';  //AGREGAR API_KEY DE WEATHERAPI
   private apiUrl: string = 'https://api.weatherapi.com/v1/current.json';
 
   constructor(private http: HttpClient) {}

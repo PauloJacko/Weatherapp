@@ -16,7 +16,7 @@ export class HomePage implements AfterViewInit {
   city: string = ''; 
   weatherData: any;
   map!: mapboxgl.Map;
-  mapboxToken: string = 'pk.eyJ1IjoicGF1bG9ra28iLCJhIjoiY204cmV3dGNxMGo1bzJscGx5amE3a2FkbiJ9.MZcsYHXDQz-Sf3vZq1Tz7w';
+  mapboxToken: string = ''; //AGREGAR API_KEY DE MAPBOX 
 
   constructor(private weatherService: WeatherService) {}
 
