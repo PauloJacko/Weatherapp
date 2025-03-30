@@ -4,7 +4,8 @@
 
 - HOME.PAGE.TS: Agregar API_KEY de MapBox
 - WEATHERAPP.SERVICE.TS: Agregar API_KEY de WeatherAPI
-- Una vez agregadas ambas API_KEYS correr servidor con "ionic serve"
+- Instalar dependencias: npm install
+- Una vez agregadas ambas API_KEYS e instaladas las dependencias, correr servidor con "ionic serve"
 
 **ARQUITECTURA y VERSIONES:**
 
