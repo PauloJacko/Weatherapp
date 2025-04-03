@@ -24,6 +24,11 @@ export class HomePage implements AfterViewInit {
     this.initializeMap();
   }
 
+  loadMap(lat: number, lon: number) {
+    this.map.setCenter([lon, lat]);
+    new mapboxgl.Marker().setLngLat([lon, lat]).addTo(this.map);
+  }
+
   getWeather() {
     this.weatherService.getWeather(this.city).subscribe(
       (data) => {
@@ -44,10 +49,5 @@ export class HomePage implements AfterViewInit {
       zoom: 10,
       accessToken: this.mapboxToken,
     });
-  }
-
-  loadMap(lat: number, lon: number) {
-    this.map.setCenter([lon, lat]);
-    new mapboxgl.Marker().setLngLat([lon, lat]).addTo(this.map);
   }
 }
